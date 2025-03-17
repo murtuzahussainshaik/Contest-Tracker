@@ -1,0 +1,259 @@
+:root {
+  --background-light: #f4f4f4;
+  --text-light: #333;
+  --background-dark: #1a1a1a;
+  --text-dark: #f4f4f4;
+  --card-light: #fff;
+  --card-dark: #252525;
+  --ongoing-light: rgba(76, 175, 80, 0.1);
+  --ongoing-dark: rgba(76, 175, 80, 0.2);
+  --section-border-light: #ddd;
+  --section-border-dark: #444;
+  --accent-color: #007bff;
+}
+
+/* Light mode default */
+body {
+  background-color: var(--background-light);
+  color: var(--text-light);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--card-light);
+  padding: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode header {
+  background-color: var(--card-dark);
+}
+
+/* Theme Toggle */
+#theme-toggle {
+  padding: 8px 15px;
+  cursor: pointer;
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Filter container */
+.filter-container {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+/* Filter dropdown */
+#filter {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: var(--card-light);
+  color: var(--text-light);
+}
+
+.dark-mode #filter {
+  background-color: var(--card-dark);
+  color: var(--text-dark);
+  border-color: #555;
+}
+
+/* Loader */
+.loader {
+  display: none;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: var(--accent-color);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Contest Sections */
+.contests-section {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--section-border-light);
+}
+
+.dark-mode .contests-section {
+  border-bottom-color: var(--section-border-dark);
+}
+
+.contests-section h2 {
+  margin-bottom: 15px;
+  color: var(--accent-color);
+}
+
+/* Contest List */
+.contest-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Contest Card - Horizontal Layout */
+.contest-card {
+  background: var(--card-light);
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.dark-mode .contest-card {
+  background: var(--card-dark);
+}
+
+.contest-card h3 {
+  margin: 0;
+  font-size: 1rem;
+  grid-column: 1;
+}
+
+.contest-card p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.contest-card .platform {
+  grid-column: 2;
+}
+
+.contest-card .date {
+  grid-column: 3;
+}
+
+.contest-card .time {
+  grid-column: 4;
+}
+
+.contest-card .duration {
+  grid-column: 5;
+}
+
+.contest-card .time-remaining {
+  grid-column: 6;
+  font-weight: bold;
+}
+
+/* Status colors */
+.time-remaining.upcoming {
+  color: var(--accent-color);
+}
+
+.time-remaining.ongoing {
+  color: #4caf50;
+}
+
+.time-remaining.past {
+  color: #9e9e9e;
+}
+
+/* Ongoing contest highlight */
+.ongoing-contest {
+  background-color: var(--ongoing-light);
+  border-left: 4px solid #4caf50;
+}
+
+.dark-mode .ongoing-contest {
+  background-color: var(--ongoing-dark);
+}
+
+/* No contests message */
+.no-contests {
+  padding: 15px;
+  text-align: center;
+  color: #666;
+  background: var(--card-light);
+  border-radius: 6px;
+}
+
+.dark-mode .no-contests {
+  background: var(--card-dark);
+  color: #aaa;
+}
+
+/* Error message */
+.error-message {
+  padding: 15px;
+  background-color: #ffebee;
+  color: #c62828;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.dark-mode .error-message {
+  background-color: rgba(198, 40, 40, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .contest-card {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 5px;
+  }
+
+  .contest-card h3 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .contest-card .platform {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .contest-card .date {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .contest-card .time {
+    grid-column: 1;
+    grid-row: 4;
+  }
+
+  .contest-card .duration {
+    grid-column: 1;
+    grid-row: 5;
+  }
+
+  .contest-card .time-remaining {
+    grid-column: 1;
+    grid-row: 6;
+  }
+}

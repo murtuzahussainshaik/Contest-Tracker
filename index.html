@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contest Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Contest Tracker</h1>
+      <button id="theme-toggle">Toggle Theme</button>
+    </header>
+
+    <div class="container">
+      <div class="filter-container">
+        <label for="filter">Filter by Platform:</label>
+        <select id="filter">
+          <option value="All">All</option>
+          <option value="LeetCode">LeetCode</option>
+          <option value="Codeforces">Codeforces</option>
+          <option value="CodeChef">CodeChef</option>
+        </select>
+      </div>
+
+      <div id="loader" class="loader"></div>
+
+      <!-- Upcoming contests section -->
+      <section class="contests-section upcoming-section">
+        <h2>Upcoming & Ongoing Contests</h2>
+        <div id="upcoming-contests" class="contest-list"></div>
+      </section>
+
+      <!-- Past contests section -->
+      <section class="contests-section past-section">
+        <h2>Past Contests</h2>
+        <div id="past-contests" class="contest-list"></div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
