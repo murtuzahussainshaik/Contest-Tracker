@@ -9,21 +9,62 @@
   <body>
     <header>
       <h1>Contest Tracker</h1>
-      <button id="theme-toggle">Toggle Theme</button>
+      <div class="header-controls">
+        <button id="bookmarks-toggle">My Bookmarks</button>
+        <button id="theme-toggle">Toggle Theme</button>
+      </div>
     </header>
 
     <div class="container">
       <div class="filter-container">
-        <label for="filter">Filter by Platform:</label>
-        <select id="filter">
-          <option value="All">All</option>
-          <option value="LeetCode">LeetCode</option>
-          <option value="Codeforces">Codeforces</option>
-          <option value="CodeChef">CodeChef</option>
-        </select>
+        <div class="filter-group">
+          <label>Filter by Platform:</label>
+          <div class="checkbox-filters">
+            <label
+              ><input
+                type="checkbox"
+                class="platform-filter"
+                value="Codeforces"
+                checked
+              />
+              Codeforces</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                class="platform-filter"
+                value="LeetCode"
+                checked
+              />
+              LeetCode</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                class="platform-filter"
+                value="CodeChef"
+                checked
+              />
+              CodeChef</label
+            >
+          </div>
+        </div>
+        <div class="filter-actions">
+          <button id="apply-filters">Apply Filters</button>
+          <button id="admin-panel">Admin Panel</button>
+        </div>
       </div>
 
       <div id="loader" class="loader"></div>
+
+      <!-- Bookmarked contests section (initially hidden) -->
+      <section
+        class="contests-section bookmarked-section"
+        style="display: none"
+      >
+        <h2>Bookmarked Contests</h2>
+        <div id="bookmarked-contests" class="contest-list"></div>
+      </section>
 
       <!-- Upcoming contests section -->
       <section class="contests-section upcoming-section">
@@ -36,6 +77,32 @@
         <h2>Past Contests</h2>
         <div id="past-contests" class="contest-list"></div>
       </section>
+    </div>
+
+    <!-- Admin Panel Modal -->
+    <div id="admin-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Admin Panel - Add YouTube Solutions</h2>
+        <form id="youtube-form">
+          <div class="form-group">
+            <label for="contest-select">Select Contest:</label>
+            <select id="contest-select" required>
+              <option value="">-- Select a Contest --</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="youtube-link">YouTube Solution Link:</label>
+            <input
+              type="url"
+              id="youtube-link"
+              placeholder="https://youtube.com/..."
+              required
+            />
+          </div>
+          <button type="submit">Save</button>
+        </form>
+      </div>
     </div>
 
     <script src="script.js"></script>

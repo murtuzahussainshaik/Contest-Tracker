@@ -167,6 +167,7 @@ header {
 .contest-card .time-remaining {
   grid-column: 6;
   font-weight: bold;
+  padding-right: 30px;
 }
 
 /* Status colors */
@@ -255,5 +256,200 @@ header {
   .contest-card .time-remaining {
     grid-column: 1;
     grid-row: 6;
+  }
+}
+
+/* Header controls for buttons */
+.header-controls {
+  display: flex;
+  gap: 10px;
+}
+
+/* Filter container updates */
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: var(--card-light);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .filter-container {
+  background-color: var(--card-dark);
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.checkbox-filters {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.checkbox-filters label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Contest card updates for bookmarking */
+.contest-card {
+  position: relative;
+}
+
+.bookmark-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.bookmark-btn.active {
+  color: #ffc107;
+}
+
+.dark-mode .bookmark-btn {
+  color: #555;
+}
+
+.dark-mode .bookmark-btn.active {
+  color: #ffc107;
+}
+
+/* YouTube solution link */
+.youtube-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: #f00;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.youtube-link:hover {
+  text-decoration: underline;
+}
+
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: var(--card-light);
+  color: var(--text-light);
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .modal-content {
+  background-color: var(--card-dark);
+  color: var(--text-dark);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: var(--accent-color);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group select,
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: var(--card-light);
+  color: var(--text-light);
+}
+
+.dark-mode .form-group select,
+.dark-mode .form-group input {
+  background-color: var(--card-dark);
+  color: var(--text-dark);
+  border-color: #555;
+}
+
+/* Button styling */
+button {
+  padding: 8px 15px;
+  cursor: pointer;
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Bookmarked section */
+.bookmarked-section {
+  border-bottom: 1px solid var(--section-border-light);
+}
+
+.dark-mode .bookmarked-section {
+  border-bottom-color: var(--section-border-dark);
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .filter-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .filter-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .header-controls {
+    flex-direction: column;
+    gap: 5px;
   }
 }
