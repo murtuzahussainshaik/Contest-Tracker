@@ -1,5 +1,9 @@
 # Contest Tracker Documentation
 
+
+## Walkthrough Video Link
+[Watch the walkthrough video](https://drive.google.com/file/d/1wy19g2EK9oLkg0xVo9Yq36qQkCZuwB8G/view?usp=sharing)
+
 # Frontend
 
 ## Overview
@@ -386,4 +390,8 @@ The application implements robust error handling:
 
 ## Screenshots of Project
 
-
+![snap1](images/snap1.png)
+![snap2](images/snap2.png)
+![snap3](images/snap3.png)
+![snap4](images/snap4.png)
+![snap5](images/snap5.png)
