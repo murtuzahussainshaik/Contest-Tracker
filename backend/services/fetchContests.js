@@ -100,7 +100,7 @@ const fetchCodeforcesYoutubePlaylist = async () => {
           part: "snippet",
           maxResults: 50,
           playlistId: CODEFORCES_PLAYLIST,
-          key: "AIzaSyCGKYP0vI7bBGe4YXUUDAMn-4SNYabnWaI",
+          key: process.env.YOUTUBE_API_KEY,
           pageToken: nextPageToken,
         },
       });
@@ -141,7 +141,7 @@ const fetchLeetcodeYoutubePlaylist = async () => {
           part: "snippet",
           maxResults: 50,
           playlistId: LEETCODE_PLAYLIST,
-          key: "AIzaSyCGKYP0vI7bBGe4YXUUDAMn-4SNYabnWaI",
+          key: process.env.YOUTUBE_API_KEY,
           pageToken: nextPageToken,
         },
       });
@@ -182,7 +182,7 @@ const fetchCodechefYoutubePlaylist = async () => {
           part: "snippet",
           maxResults: 50,
           playlistId: CODECHEF_PLAYLIST,
-          key: "AIzaSyCGKYP0vI7bBGe4YXUUDAMn-4SNYabnWaI",
+          key: process.env.YOUTUBE_API_KEY,
           pageToken: nextPageToken,
         },
       });
