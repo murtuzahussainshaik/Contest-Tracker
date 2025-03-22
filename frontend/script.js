@@ -651,7 +651,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
       if (loader) loader.style.display = "block";
 
-      const response = await fetch("http://localhost:3000/api/contests");
+      const response = await fetch(
+        "https://contest-tracker-a4xm.onrender.com/api/contests"
+      );
       const data = await response.json();
 
       if (loader) loader.style.display = "none";
